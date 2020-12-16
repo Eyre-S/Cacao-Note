@@ -1,0 +1,103 @@
+/* =========================================== */
+/*                                             */
+/*              Global Functions               */
+/*                                             */
+/* =========================================== */
+.translation-preload {
+	transition: null !important;
+	transition-duration: 0s !important;
+	transition-delay: 0s !important;
+}
+
+/** Body Background **/
+body {
+	background-image: url("../images/background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+/** Global Font **/
+body {
+	color: #1c1c1c;
+}
+
+/* =========================================== */
+/*                                             */
+/*               Global Elements               */
+/*                                             */
+/* =========================================== */
+.full-height-container {
+	height: 100%
+}
+.full-height-container.relative {
+	position: relative;
+}
+.card-notice {
+	width: 100%;
+	padding: 0.1px;
+	border-top: 3px black solid;
+	border-bottom: 3px black solid;
+	text-align: center;
+	background-image: url("../images/bg-texture.png");
+	background-color: #f5f5f5cc;
+}
+.card-notice.card-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%)
+}
+
+#cacao-foot {
+	border-bottom: 0;
+}
+
+/* =========================================== */
+/*                                             */
+/*            HTML Elements Functions          */
+/*                                             */
+/* =========================================== */
+.margin-half {
+	margin-block-start: 0.5em !important;
+	margin-block-end: 0.5em !important;
+}
+
+.margin-off {
+	margin-block-start: 0 !important;
+	margin-block-end: 0 !important;
+}
+
+p.small {
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	font-size: 0.8em;
+}
+p.small-margin {
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+}
+
+.cacao-blur-background-container {
+	position: relative;
+	background: unset;
+	overflow: hidden;
+	/*backdrop-filter: blur(15px);*/
+}
+.cacao-blur-background-container:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(255,255,255,0.8);
+	z-index: -1;
+	background-image: url("../images/background.jpg");
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	filter: blur(20px);
+	margin: -30px;
+}

@@ -1,0 +1,63 @@
+/* =========================================== */
+/*                                             */
+/*                  Page Global                */
+/*                                             */
+/* =========================================== */
+body, html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	/*font-family:'Century Gothic','Trebuchet MS','Hiragino Sans GB','微软雅黑','Microsoft Yahei','Tahoma','Helvetica','Arial','SimSun','sans-serif';*/
+}
+
+/* Unused font */
+/*@font-face {*/
+/*	font-family: 'Century Gothic';*/
+/*	src: url('/assets/font/GOTHIC.TTF');*/
+/*}*/
+
+/* =========================================== */
+/*                                             */
+/*                    Element                  */
+/*                                             */
+/* =========================================== */
+p {
+	margin-block-start: 1.618em;
+	margin-block-end: 1.618em;
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+	line-height: 1.618;
+	word-break: break-all;
+	white-space: normal;
+}
+
+h1 {
+	font-size: 3em;
+	font-weight: 500;
+	margin-block-start: 0.83em;
+	margin-block-end: 0.83em;
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+  }
+h2 {
+	font-size: 1.6em;
+	font-weight: 500;
+	margin-block-start: 0.83em;
+	margin-block-end: 0.83em;
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+}
+
+a,
+a:link {
+	position:relative;
+	color: #51a8dd;
+	text-decoration:none;
+}
+a:visited {
+	color: #7b90d2;
+}
+a:hover {
+	color: #81c7d4;
+}
+
