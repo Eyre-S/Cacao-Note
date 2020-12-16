@@ -79,25 +79,34 @@ p.small-margin {
 	margin-block-end: 1em;
 }
 
-.cacao-blur-background-container {
-	position: relative;
-	background: unset;
-	overflow: hidden;
-	/*backdrop-filter: blur(15px);*/
+@supports (backdrop-filter: unset) {
+	.cacao-blur-background {
+		background: unset;
+		backdrop-filter: blur(50px);
+	}
 }
-.cacao-blur-background-container:after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(255,255,255,0.8);
-	z-index: -1;
-	background-image: url("../images/background.jpg");
-	background-position: center;
-	background-size: cover;
-	background-attachment: fixed;
-	filter: blur(20px);
-	margin: -30px;
+
+
+@supports not (backdrop-filter: unset) {
+	.cacao-blur-background {
+		position: relative;
+		background: unset;
+		overflow: hidden;
+	}
+	.cacao-blur-background:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(255,255,255,0.8);
+		z-index: -1;
+		background-image: url("../images/background.jpg");
+		background-position: center;
+		background-size: cover;
+		background-attachment: fixed;
+		filter: blur(50px);
+		margin: -30px;
+	}
 }

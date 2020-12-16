@@ -6,7 +6,7 @@
 	/************************************************************/
 	/**  !!!YOU SHOULD EDIT THE style.css AT THE SAME TIME!!!  **/
 	/************************************************************/
-	const CACAO_VERSION = '0.2';
+	const CACAO_VERSION = '0.2.1';
 	
 	/**********************************************/
 	/**                                          **/
@@ -49,6 +49,35 @@
 	
 	/**********************************************/
 	/**                                          **/
+	/**               Head & Title               **/
+	/**                                          **/
+	/**********************************************/
+	///////////////////
+	/// Home Title
+	function cacao_customizer_register_home_title_vertical ($wp_customize) {
+		$wp_customize->add_setting('cacao-home-title-vertical', array(
+			'type' => 'theme_mod',
+			'default' => false
+		));
+		$wp_customize->add_control('cacao-home-title-vertical', array(
+			'label' => 'Show home page title vertically', // TODO lang
+			'type' => 'checkbox',
+			'priority' => 110,
+			'section' => 'cacao-note'
+		));
+	}
+	
+	function cacao_is_home_title_vertical (): bool {
+		return get_theme_mod('cacao-home-title-vertical');
+	}
+	
+	function cacao_the_home_title () {
+		echo "<h1>".get_bloginfo('name')."</h1>";
+		echo "<p>".get_bloginfo('description')."</p>";
+	}
+	
+	/**********************************************/
+	/**                                          **/
 	/**                  Footer                  **/
 	/**                                          **/
 	/**********************************************/
@@ -61,17 +90,17 @@
 	
 	///////////////////
 	/// Copyright
-	function cacao_customizer_register_copyright ( $wp_customize ) {
-		$wp_customize->add_setting( 'cacao-footer', array(
+	function cacao_customizer_register_copyright ($wp_customize) {
+		$wp_customize->add_setting('cacao-footer', array(
 			'type' => 'theme_mod',
-			'default' => 'Cacao (C) Placeholder',
+			'default' => 'Cacao (C) Placeholder'
 		));
-		$wp_customize->add_control( 'cacao-footer', array(
+		$wp_customize->add_control('cacao-footer', array(
 			'label' => 'Footer Copyright', // TODO lang
 			'type' => 'textarea',
-			'priority' => 200,
-			'section' => 'cacao-note',
-		) );
+			'priority' => 300,
+			'section' => 'cacao-note'
+		));
 	}
 	
 	function cacao_get_the_copyright (): string {
@@ -94,18 +123,17 @@
 	
 	///////////////////
 	/// Statement
-	function cacao_customizer_register_footer_statement ( $wp_customize ) {
-		$wp_customize->add_setting( 'cacao-footer-statement', array(
+	function cacao_customizer_register_footer_statement ($wp_customize) {
+		$wp_customize->add_setting('cacao-footer-statement', array(
 			'type' => 'theme_mod',
-			'default' => true,
+			'default' => true
 		));
-		$wp_customize->add_control( 'cacao-footer-statement', array(
-			'label' => 'Footer Statement', // TODO lang
-			'description' => 'whether to display theme statement at the footer',
+		$wp_customize->add_control('cacao-footer-statement', array(
+			'label' => 'Display theme statement at the footer', // TODO lang
 			'type' => 'checkbox',
-			'priority' => 210,
-			'section' => 'cacao-note',
-		) );
+			'priority' => 310,
+			'section' => 'cacao-note'
+		));
 	}
 	
 	function cacao_is_display_footer_statement () {
@@ -180,12 +208,13 @@
 	/**              Wordpress Hook              **/
 	/**                                          **/
 	/**********************************************/
-	function cacao_customize_register( $wp_customize ) {
+	function cacao_customize_register($wp_customize) {
 		$wp_customize->add_section( 'cacao-note', array(
 			'title' => 'Cacao Note', // TODO lang
-			'priority' => 90,
+			'priority' => 90
 		) );
 		cacao_customizer_register_copyright($wp_customize);
 		cacao_customizer_register_footer_statement($wp_customize);
-	} add_action( 'customize_register', 'cacao_customize_register' );
+		cacao_customizer_register_home_title_vertical($wp_customize);
+	} add_action('customize_register', 'cacao_customize_register');
 	

@@ -1,9 +1,9 @@
 <?php cacao_css("home"); ?>
 <?php cacao_css("post-list"); ?>
 <?php get_header(); ?>
-	<div id="card-title-container" class="card-notice cacao-blur-background-container">
-		<div id="card-title" class="cacao-blur-background">
-			<p>Hello Wrodl!</p>
+	<div id="card-title-container" class="card-notice cacao-blur-background">
+		<div id="card-title" class="<?php if (cacao_is_home_title_vertical()) echo "vertical" ?>">
+			<div id="card-title-content"><?php cacao_the_home_title(); ?></div>
 		</div>
 	</div>
 	<div id="post-list-container-main" class="post-list-container">
