@@ -1,5 +1,6 @@
 <?php cacao_css("home"); ?>
 <?php cacao_css("post-list"); ?>
+<?php cacao_set_html_title(); ?>
 <?php get_header(); ?>
 	<div id="card-title-container" class="card-notice cacao-blur-background">
 		<div id="card-title" class="<?php if (cacao_is_home_title_vertical()) echo "vertical" ?>">

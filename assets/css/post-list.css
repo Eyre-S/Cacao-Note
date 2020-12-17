@@ -61,13 +61,12 @@
 	border-radius: 50% 1% 11% 1% / 6% 82% 4% 56%;
 }
 
-.card-note-light {
+.card-note.light {
 	border-color: black;
 	background-color: white;
 }
 
-.card-note-dark {
+.card-note.dark {
 	border-color: whitesmoke;
 	background-color: #212121;
-	color: aliceblue !important;
 }

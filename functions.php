@@ -6,7 +6,44 @@
 	/************************************************************/
 	/**  !!!YOU SHOULD EDIT THE style.css AT THE SAME TIME!!!  **/
 	/************************************************************/
-	const CACAO_VERSION = '0.2.1';
+	const CACAO_VERSION = '0.3';
+	
+	/**********************************************/
+	/**                                          **/
+	/**                Site Meta                 **/
+	/**                                          **/
+	/**********************************************/
+	///////////////////
+	/// Site Meta Info
+	function cacao_blog_name (): string {
+		return get_bloginfo('name');
+	}
+	
+	function cacao_blog_description (): string {
+		return get_bloginfo('description');
+	}
+	
+	///////////////////
+	/// HTML title
+	$html_title = "N/A";
+	
+	function cacao_the_html_title () {
+		global $html_title;
+		echo $html_title;
+	}
+	
+	function cacao_set_html_title (string $title = "") {
+		global $html_title;
+		if ($title == "") {
+			$html_title = cacao_blog_name();
+		} else {
+			$html_title = $title." ".cacao_get_the_html_title_connector()." " . cacao_blog_name();
+		}
+	}
+	
+	function cacao_get_the_html_title_connector (): string {
+		return '-'; // TODO customize
+	}
 	
 	/**********************************************/
 	/**                                          **/
@@ -72,8 +109,8 @@
 	}
 	
 	function cacao_the_home_title () {
-		echo "<h1>".get_bloginfo('name')."</h1>";
-		echo "<p>".get_bloginfo('description')."</p>";
+		echo "<h1>" .cacao_blog_name() . "</h1>";
+		echo "<p>" .cacao_blog_description() . "</p>";
 	}
 	
 	/**********************************************/
@@ -190,13 +227,13 @@
 		static function the_note_theme () {
 			switch (self::get_the_post_type()) {
 				case self::NOTE_LIGHT:
-					echo "card-note-light";
+					echo "light";
 					break;
 				case self::NOTE_DARK:
-					echo "card-note-dark";
+					echo "dark";
 					break;
 				default:
-					echo "card-note-unknown";
+					echo "unknown";
 					break;
 			}
 		}

@@ -8,6 +8,7 @@ body, html {
 	padding: 0;
 	height: 100%;
 	/*font-family:'Century Gothic','Trebuchet MS','Hiragino Sans GB','微软雅黑','Microsoft Yahei','Tahoma','Helvetica','Arial','SimSun','sans-serif';*/
+	tab-size: 4;
 }
 
 /* Unused font */
@@ -53,6 +54,7 @@ a:link {
 	position:relative;
 	color: #51a8dd;
 	text-decoration:none;
+	transition-duration: 0.25s;
 }
 a:visited {
 	color: #7b90d2;
@@ -61,3 +63,22 @@ a:hover {
 	color: #81c7d4;
 }
 
+/* =========================================== */
+/*                                             */
+/*              Additional Theme               */
+/*                                             */
+/* =========================================== */
+.dark {
+	color: aliceblue;
+}
+
+.dark a,
+.dark a:link {
+	color: #88d9ff;
+}
+.dark a:visited {
+	color: #adc0ff;
+}
+.dark a:hover {
+	color: #b3faff;
+}
