@@ -19,8 +19,10 @@ body {
 }
 
 /** Global Font **/
-body {
-	color: #1c1c1c;
+html {
+	tab-size: var(--cacao-tab-size);
+	color: var(--cacao-foreground-color);
+	font-size: var(--cacao-regular-font-size);
 }
 
 /* =========================================== */
@@ -31,9 +33,11 @@ body {
 .full-height-container {
 	height: 100%
 }
-.full-height-container.relative {
+
+.relative {
 	position: relative;
 }
+
 .card-notice {
 	width: 100%;
 	padding: 0.1px;
@@ -60,8 +64,8 @@ body {
 /*                                             */
 /* =========================================== */
 .margin-half {
-	margin-block-start: 0.5em !important;
-	margin-block-end: 0.5em !important;
+	margin-block-start: 0.5rem !important;
+	margin-block-end: 0.5rem !important;
 }
 
 .margin-off {
@@ -70,19 +74,19 @@ body {
 }
 
 p.small {
-	margin-block-start: 1em;
-	margin-block-end: 1em;
-	font-size: 0.8em;
+	margin-block-start: 1rem;
+	margin-block-end: 1rem;
+	font-size: 0.8rem;
 }
 p.small-margin {
-	margin-block-start: 1em;
-	margin-block-end: 1em;
+	margin-block-start: 1rem;
+	margin-block-end: 1rem;
 }
 
 @supports (backdrop-filter: unset) {
 	.cacao-blur-background {
 		background: unset;
-		backdrop-filter: blur(50px);
+		backdrop-filter: blur(var(--cacao-blur-radius));
 	}
 }
 
@@ -106,7 +110,7 @@ p.small-margin {
 		background-position: center;
 		background-size: cover;
 		background-attachment: fixed;
-		filter: blur(50px);
+		filter: blur(var(--cacao-blur-radius));
 		margin: -30px;
 	}
 }
