@@ -5,7 +5,8 @@
 		<p></p>
 		<h2 class="margin-off">VVARN!</h2>
 		<h1 class="margin-off">Here Is the Default Page!</h1>
-		<p>balabala...</p>
+		<p>It looks like you have entered a non-existent location.</p>
+		<p>This is mostly caused by a theme error. You can check for updates or try to give feedback to the author.</p>
 		<!-- TODO lang -->
 	</div>
 </div>
