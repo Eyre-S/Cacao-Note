@@ -8,6 +8,7 @@
 	/************************************************************/
 	/** CACAO NOTE 主题版本号 */
 	const CACAO_VERSION = '0.4';
+	const CACAO_DOMAIN = 'cacaonote';
 	
 	/**********************************************/
 	/**                                          **/
@@ -146,7 +147,7 @@
 			'default' => false
 		));
 		$wp_customize->add_control('cacao-home-title-vertical', array(
-			'label' => 'Show home page title vertically', // TODO lang
+			'label' => __("Show home page title vertically", CACAO_DOMAIN),
 			'type' => 'checkbox',
 			'priority' => 110,
 			'section' => 'cacao-note'
@@ -202,7 +203,7 @@
 			'default' => 'Cacao (C) Placeholder'
 		));
 		$wp_customize->add_control('cacao-footer', array(
-			'label' => 'Footer Copyright', // TODO lang
+			'label' => __("Footer Copyright", CACAO_DOMAIN),
 			'type' => 'textarea',
 			'priority' => 300,
 			'section' => 'cacao-note'
@@ -250,7 +251,7 @@
 			'default' => true
 		));
 		$wp_customize->add_control('cacao-footer-statement', array(
-			'label' => 'Display theme statement at the footer', // TODO lang
+			'label' => __("Display theme statement at the footer", CACAO_DOMAIN),
 			'type' => 'checkbox',
 			'priority' => 310,
 			'section' => 'cacao-note'
@@ -269,7 +270,7 @@
 	 */
 	function cacao_the_footer_statement () {
 		$CACAO_VERSION = CACAO_VERSION;
-		echo "<p class=\"footer-statement small\">by theme Cacao Note - $CACAO_VERSION</p>";
+		printf("<p class=\"footer-statement small\">".__("by theme Cacao Note - %s", CACAO_DOMAIN)."</p>", $CACAO_VERSION);
 	}
 	
 	/**********************************************/
@@ -277,7 +278,6 @@
 	/**                Post Type                 **/
 	/**                                          **/
 	/**********************************************/
-	
 	/**
 	 * Cacao自定义文章类型
 	 *
@@ -356,6 +356,30 @@
 	
 	/**********************************************/
 	/**                                          **/
+	/**             Cacao Page Part              **/
+	/**                                          **/
+	/**********************************************/
+	function cacao_the_listing_card_post () {
+		get_template_part("templates/listing-card-post");
+	}
+	
+	function cacao_the_listing_card_note () {
+		get_template_part("templates/listing-card-note");
+	}
+	
+	function cacao_the_listing_card_unknown () {
+		get_template_part("templates/listing-card-unknown");
+	}
+	
+	/**
+	 * 输出 WIP 模板
+	 */
+	function cacao_the_wip () {
+		get_template_part('templates/wip');
+	}
+	
+	/**********************************************/
+	/**                                          **/
 	/**              Wordpress Hook              **/
 	/**                                          **/
 	/**********************************************/
@@ -365,11 +389,18 @@
 	 */
 	function cacao_customize_register(WP_Customize_Manager $wp_customize) {
 		$wp_customize->add_section( 'cacao-note', array(
-			'title' => 'Cacao Note', // TODO lang
+			'title' => __("Cacao Note", CACAO_DOMAIN),
 			'priority' => 90
 		) );
 		cacao_customizer_register_copyright($wp_customize);
 		cacao_customizer_register_footer_statement($wp_customize);
 		cacao_customizer_register_home_title_vertical($wp_customize);
 	} add_action('customize_register', 'cacao_customize_register');
+	
+	/**
+	 * 加载 Cacao Note 主题包自带的本地化文件
+	 */
+	function cacao_load_languages() {
+		load_theme_textdomain(CACAO_DOMAIN, get_template_directory() . '/languages' );
+	} add_action( 'after_setup_theme', 'cacao_load_languages' );
 	

@@ -11,11 +11,11 @@
 		<?php while (have_posts()) : ?>
 			<?php the_post(); ?>
 			<?php if (CacaoPostType::is_post()) : ?>
-				<?php get_template_part("templates/listing-card-post"); ?>
+				<?php cacao_the_listing_card_post(); ?>
 			<?php elseif (CacaoPostType::is_note()) : ?>
-				<?php get_template_part("templates/listing-card-note"); ?>
+				<?php cacao_the_listing_card_note(); ?>
 			<?php else : ?>
-				<?php get_template_part("templates/listing-card-unknown"); ?>
+				<?php cacao_the_listing_card_unknown(); ?>
 			<?php endif ?>
 		<?php endwhile ?>
 	</div>

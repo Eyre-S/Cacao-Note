@@ -1,0 +1,125 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Project-Id-Version: Cacao Note\n"
+"POT-Creation-Date: 2020-12-25 16:29+0800\n"
+"PO-Revision-Date: 2020-12-25 17:11+0800\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#. Theme Name of the plugin/theme
+#. No need to translate
+#: :# Theme Meta functions.php:392
+msgid "Cacao Note"
+msgstr "Cacao Note"
+
+#. Description of the plugin/theme
+msgid "A simple, very simple, even much more simple note theme for WordPress"
+msgstr "一个简单，非常简单，简单到不能再简单的 WordPress 主题"
+
+#. Theme URI of the plugin/theme
+#. No need to translate
+msgid "https://sukazyo.cc/projects/cacao-note"
+msgstr "https://sukazyo.cc/projects/cacao-note"
+
+#. Author of the plugin/theme
+#. No need to translate
+msgid "Sukazyo Workshop"
+msgstr "Sukazyo Workshop"
+
+#. Author URI of the plugin/theme
+#. No need to translate
+msgid "https://sukazyo.cc"
+msgstr "https://sukazyo.cc"
+
+#. 404 Code
+#. No translation at all! XD
+#: :# Special Page 404.php:1
+msgid "404"
+msgstr "404"
+
+#. 404 Page Title
+#. Not very recommended for translation
+#: 404.php:5
+msgid "404 Not Founcl"
+msgstr "404 未 找 至刂"
+
+#. WIP Template Page title
+#: templates/wip.php:1 templates/wip.php:6
+msgid "WIP Page Type"
+msgstr "页面类型开发中"
+
+#. WIP Template Page description
+#: templates/wip.php:7
+msgid ""
+"Sorry, the current page type is temporarily unavailable, please wait for the "
+"update."
+msgstr "抱歉，当前页面类型暂时不可用，请等待更新。"
+
+#. Missing Template Page title
+#: index.php:1
+msgid "Missing Page Template"
+msgstr "页面模板缺失"
+
+#. Missing Template Page description line 1
+#: index.php:7
+msgid "Here Is the Default Page!"
+msgstr "这里是主题默认页面！"
+
+#. Missing Template Page description line 2
+#: index.php:8
+msgid "It looks like you have entered a non-existent location."
+msgstr "看起来你进入了一个不存在的位置。"
+
+#. Missing Template Page description line 3
+#: index.php:9
+msgid ""
+"This is mostly caused by a theme error. You can check for updates or try to "
+"give feedback to the author."
+msgstr "这极有可能是由主题错误引起的。 您可以检查更新后向作者提供反馈。"
+
+#. customize option
+#. `checkbox description`
+#: :# Theme Customize functions.php:150
+msgid "Show home page title vertically"
+msgstr "垂直显示首页标题"
+
+#. customize option
+#. `textarea title`
+#: functions.php:206
+msgid "Footer Copyright"
+msgstr "页脚版权文字"
+
+#. The default message of theme footer statement
+#. %s -> CACAO_VERSION
+#. Not very recommended for translation
+#: functions.php:273
+#, php-format
+msgid "by theme Cacao Note - %s"
+msgstr "by theme Cacao Note - %s"
+
+#. customize option
+#. `checkbox description`
+#: functions.php:254
+msgid "Display theme statement at the footer"
+msgstr "在页脚显示主题声明"
+
+#. WARN Tag
+#. Not very recommended for translation
+#: :# Others index.php:6
+msgid "VVARN!"
+msgstr "!@警告@!"
