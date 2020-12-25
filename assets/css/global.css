@@ -1,5 +1,25 @@
 /* =========================================== */
 /*                                             */
+/*            Common Style Configure           */
+/*                                             */
+/* =========================================== */
+:root {
+	--cacao-max-content-width: 900px; /* TODO customize */
+	--cacao-foreground-color: #1c1c1c; /* TODO customize */
+	--cacao-foreground-color-dark: aliceblue; /* TODO customize */
+	--cacao-link-color: #51a8dd; /* TODO customize */
+	--cacao-link-color-dark: #88d9ff; /* TODO customize */
+	--cacao-link-visited-color: #7b90d2; /* TODO customize */
+	--cacao-link-visited-color-dark: #adc0ff; /* TODO customize */
+	--cacao-link-hover-color: #81c7d4; /* TODO customize */
+	--cacao-link-hover-color-dark: #b3faff; /* TODO customize */
+	--cacao-regular-font-size: 1em; /* TODO customize */
+	--cacao-tab-size: 4; /* TODO customize */
+	--cacao-blur-radius: 50px; /* TODO customize */
+}
+
+/* =========================================== */
+/*                                             */
 /*                  Page Global                */
 /*                                             */
 /* =========================================== */
@@ -8,7 +28,6 @@ body, html {
 	padding: 0;
 	height: 100%;
 	/*font-family:'Century Gothic','Trebuchet MS','Hiragino Sans GB','微软雅黑','Microsoft Yahei','Tahoma','Helvetica','Arial','SimSun','sans-serif';*/
-	tab-size: 4;
 }
 
 /* Unused font */
@@ -23,8 +42,8 @@ body, html {
 /*                                             */
 /* =========================================== */
 p {
-	margin-block-start: 1.618em;
-	margin-block-end: 1.618em;
+	margin-block-start: 1.618rem;
+	margin-block-end: 1.618rem;
 	margin-inline-start: 0;
 	margin-inline-end: 0;
 	line-height: 1.618;
@@ -33,18 +52,18 @@ p {
 }
 
 h1 {
-	font-size: 3em;
+	font-size: 3rem;
 	font-weight: 500;
-	margin-block-start: 0.83em;
-	margin-block-end: 0.83em;
+	margin-block-start: 0.83rem;
+	margin-block-end: 0.83rem;
 	margin-inline-start: 0;
 	margin-inline-end: 0;
   }
 h2 {
-	font-size: 1.6em;
+	font-size: 1.6rem;
 	font-weight: 500;
-	margin-block-start: 0.83em;
-	margin-block-end: 0.83em;
+	margin-block-start: 0.83rem;
+	margin-block-end: 0.83rem;
 	margin-inline-start: 0;
 	margin-inline-end: 0;
 }
@@ -52,15 +71,15 @@ h2 {
 a,
 a:link {
 	position:relative;
-	color: #51a8dd;
+	color: var(--cacao-link-color);
 	text-decoration:none;
 	transition-duration: 0.25s;
 }
 a:visited {
-	color: #7b90d2;
+	color: var(--cacao-link-visited-color);
 }
 a:hover {
-	color: #81c7d4;
+	color: var(--cacao-link-hover-color);
 }
 
 /* =========================================== */
@@ -69,16 +88,16 @@ a:hover {
 /*                                             */
 /* =========================================== */
 .dark {
-	color: aliceblue;
+	color: var(--cacao-foreground-color-dark);
 }
 
 .dark a,
 .dark a:link {
-	color: #88d9ff;
+	color: var(--cacao-link-color-dark);
 }
 .dark a:visited {
-	color: #adc0ff;
+	color: var(--cacao-link-visited-color-dark);
 }
 .dark a:hover {
-	color: #b3faff;
+	color: var(--cacao-link-visited-color-dark);
 }
