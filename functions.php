@@ -7,7 +7,7 @@
 	/**  !!!YOU SHOULD EDIT THE style.css AT THE SAME TIME!!!  **/
 	/************************************************************/
 	/** CACAO NOTE 主题版本号 */
-	const CACAO_VERSION = '0.4';
+	const CACAO_VERSION = '0.6';
 	const CACAO_DOMAIN = 'cacaonote';
 	
 	/**********************************************/
@@ -284,6 +284,7 @@
 	 * 用于从基础文章类型中分理出特殊的，
 	 * 以`title`作为标识符的，Cacao Note 特殊类型文章：`note`
 	 */
+	/* @noinspection all */
 	class CacaoPostType {
 		
 		/** @var int 普通的文章 */
@@ -376,6 +377,38 @@
 	 */
 	function cacao_the_wip () {
 		get_template_part('templates/wip');
+	}
+	
+	function cacao_the_site_title_card () {
+		get_template_part('templates/site-title-card');
+	}
+	
+	function cacao_the_content_tag () {
+		echo "<div id=\"content\"></div> <!-- Content Link Tag -->";
+	}
+	
+	function cacao_the_content () {
+		get_template_part('templates/content');
+	}
+	
+	function cacao_the_comments () {
+		get_template_part('templates/comments');
+	}
+	
+	/**********************************************/
+	/**                                          **/
+	/**            Cacao Post Process            **/
+	/**                                          **/
+	/**********************************************/
+	/**
+	 * 将传入的~~管它是还不是的~~链接添加content跳转标签
+	 *
+	 * @param string $url 源链接
+	 *
+	 * @return string 添加标签后的链接
+	 */
+	function cacao_link_goto_content (string $url): string {
+		return $url."#content";
 	}
 	
 	/**********************************************/
