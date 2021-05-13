@@ -5,8 +5,8 @@
 <?php get_header(); ?>
 	<?php cacao_the_site_title_card(); ?>
 	<?php cacao_the_content_tag(); ?>
-	<div id="singular-title-container">
-		<div id="singular-title-content" class="card-notice cacao-blur-background">
+	<div id="singular-title-container" class="card-notice-border" style="background-image: url(<?=cacao_get_post_feature_image()?>)">
+		<div id="singular-title-content" class="card-notice non-border cacao-blur-background<?= cacao_has_post_feature_image()?" with-feature-image":"" ?>">
 			<h1><?php the_title(); ?></h1>
 		</div>
 	</div>

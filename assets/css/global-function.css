@@ -53,6 +53,14 @@ html {
 	left: 50%;
 	transform: translate(-50%, -50%)
 }
+.card-notice.non-border {
+	border: 0;
+}
+
+.card-notice-border {
+	border-top: 3px black solid;
+	border-bottom: 3px black solid;
+}
 
 #cacao-foot {
 	border-bottom: 0;

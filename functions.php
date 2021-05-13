@@ -7,7 +7,7 @@
 	/**  !!!YOU SHOULD EDIT THE style.css AT THE SAME TIME!!!  **/
 	/************************************************************/
 	/** CACAO NOTE 主题版本号 */
-	const CACAO_VERSION = '0.6';
+	const CACAO_VERSION = '0.6-alpha2';
 	const CACAO_DOMAIN = 'cacaonote';
 	
 	/**********************************************/
@@ -174,6 +174,23 @@
 		echo "<p>" .cacao_blog_description() . "</p>";
 	}
 	
+	///////////////////
+	/// Post Meta
+	/**
+	 * todo
+	 */
+	function cacao_has_post_feature_image (): bool {
+		return get_post_thumbnail_id(get_the_ID());
+	}
+	
+	function cacao_get_post_feature_image (): string {
+		return
+			cacao_has_post_feature_image()?
+				get_the_post_thumbnail_url():
+				"null"
+			;
+	}
+	
 	/**********************************************/
 	/**                                          **/
 	/**                  Footer                  **/
@@ -301,7 +318,7 @@
 		static function get_the_post_type (): int {
 			$explode = explode(',', get_the_title());
 			if ($explode[0] == "*note") {
-				if ($explode[1] != null && $explode[1] == "dark") {
+				if (sizeof($explode)>1 && $explode[1] == "dark") {
 					return CacaoPostType::NOTE_DARK;
 				} else {
 					return CacaoPostType::NOTE_LIGHT;
@@ -436,4 +453,7 @@
 	function cacao_load_languages() {
 		load_theme_textdomain(CACAO_DOMAIN, get_template_directory() . '/languages' );
 	} add_action( 'after_setup_theme', 'cacao_load_languages' );
+	
+	/** 开启特色图片功能 */
+	add_theme_support( 'post-thumbnails' );
 	

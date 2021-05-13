@@ -6,10 +6,16 @@
 #singular-title-container {
 	position: relative;
 	margin: 8rem 0;
+	background-size: cover;
+	background-position: center;
 }
 
 #singular-title-content {
-	padding: 2rem 0;
+	padding: 10vw 0;
+	transition-duration: 0.3s;
+}
+#singular-title-content.with-feature-image:hover {
+	opacity: 0;
 }
 
 #singular-content-container,
